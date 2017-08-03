@@ -30,7 +30,7 @@ data "aws_route_table" "current" {
 
 resource "aws_route" "route" {
   count                     = "${length(distinct(data.aws_route_table.current.*.id))}"
-  route_table_id            = "${element(sort(distinct(data.aws_route_table.current.*.id)), count.index)}"
+  route_table_id            = "${element(distinct(data.aws_route_table.current.*.id), count.index)}"
   destination_cidr_block    = "${var.peer_cidr}"
   vpc_peering_connection_id = "${aws_vpc_peering_connection.connection.id}"
 }

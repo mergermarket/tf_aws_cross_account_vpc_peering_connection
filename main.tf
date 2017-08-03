@@ -9,7 +9,7 @@ module "from" {
 
   aws_region   = "${data.aws_region.current.name}"
   role_name    = "${var.from_role_name}"
-  session_name = "${data.aws_caller_identity.current.user_id}"
+  session_name = "${substr(replace(data.aws_caller_identity.current.user_id, "/[^\w+=,.@-]+/", "_"), 64)}"
 
   name = "${var.name}"
 
@@ -27,7 +27,7 @@ module "to" {
 
   aws_region   = "${data.aws_region.current.name}"
   role_name    = "${var.to_role_name}"
-  session_name = "${data.aws_caller_identity.current.user_id}"
+  session_name = "${substr(replace(data.aws_caller_identity.current.user_id, "/[^\w+=,.@-]+/", "_"), 64)}"
 
   name = "${var.name}"
 

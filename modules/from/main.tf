@@ -3,7 +3,7 @@ provider "aws" {
 
   assume_role {
     role_arn     = "arn:aws:iam::${var.account_id}:role/${var.role_name}"
-    session_name = "${var.session_name}"
+    session_name = "test"
   }
 }
 

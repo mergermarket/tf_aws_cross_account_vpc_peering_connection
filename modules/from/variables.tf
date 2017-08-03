@@ -2,7 +2,7 @@ variable "aws_region" {
   description = "The AWS region."
 }
 
-variables "role_name" {
+variable "role_name" {
   description = "The name of the IAM role to assume."
 }
 

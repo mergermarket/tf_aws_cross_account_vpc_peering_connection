@@ -23,11 +23,11 @@ module "peering-connection-accountx-accounty" {
 * `name` (string, required) - the name/name prefix to give resources created by the module.
 * `from_account_id` (string, required) - the account to establish the peering connection from.
 * `from_vpc_id` (string, required) - the vpc in the _from_ account.
-* `from_role_name` (string, default=`"admin"`) - the role to assume in the _from_ account.
+* `from_role_name` (string, default `"admin"`) - the role to assume in the _from_ account.
 * `to_account_id` (string, required) - the account to accept the peering connection in.
 * `to_vpc_id` (string, required) - the vpc in the _to_ account.
-* `to_role_name` (string, default=`"admin"`) - the role to assume in the _to_ account.
+* `to_role_name` (string, default `"admin"`) - the role to assume in the _to_ account.
 
 ## Outputs
 
-
+* `peering_connection_id` - the peering connection id.

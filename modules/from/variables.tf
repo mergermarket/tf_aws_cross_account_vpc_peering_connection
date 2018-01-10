@@ -1,6 +1,3 @@
-variable "aws_region" {
-  description = "The AWS region."
-}
 
 variable "role_name" {
   description = "The name of the IAM role to assume."
@@ -30,6 +27,14 @@ variable "peer_vpc_id" {
   description = "ID of the remote vpc to peer."
 }
 
+variable "vpc_region" {
+  description = "region of the remote vpc to peer."
+}
+
 variable "peer_cidr" {
   description = "The CIDR range for the peer VPC."
+}
+
+variable "peer_region" {
+  description = "The region of the the peer VPC."
 }

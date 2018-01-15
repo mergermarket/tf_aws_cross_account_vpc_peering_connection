@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "${var.aws_region}"
+  region = "${var.vpc_region}"
 
   assume_role {
     role_arn     = "arn:aws:iam::${var.account_id}:role/${var.role_name}"
@@ -12,6 +12,7 @@ resource "aws_vpc_peering_connection" "connection" {
   peer_owner_id = "${var.peer_account_id}"
   peer_vpc_id   = "${var.peer_vpc_id}"
   auto_accept   = false
+  peer_region   = "${var.peer_region}"
 
   tags {
     Name = "${var.name}"

@@ -3,9 +3,9 @@ data "aws_vpc" "current" {
 }
 
 output "cidr" {
-  value = "hello"
+  value = "${data.aws_vpc.current.cidr_block}"
 }
 
 output "peering_connection_id" {
-  value = "me"
+  value = "${aws_vpc_peering_connection.connection.id}"
 }

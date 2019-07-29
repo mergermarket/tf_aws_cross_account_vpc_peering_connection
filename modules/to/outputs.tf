@@ -3,5 +3,5 @@ data "aws_vpc" "current" {
 }
 
 output "cidr" {
-  value = "${data.aws_vpc.current.cidr_block}"
+  value = "blah"
 }
